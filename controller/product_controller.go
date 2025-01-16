@@ -7,7 +7,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type productController struct{}
+type productController struct {
+	productUseCase usecase.ProductUseCase
+}
 
 func NewProductController() *productController {
 	return &productController{}
