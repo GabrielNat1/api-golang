@@ -51,7 +51,7 @@ func (p *productController) GetProductsById(ctx *gin.Context) {
 
 	id := ctx.Param("productId")
 	if id == "" {
-		response := model.Reponse{
+		response := model.Response{
 			Message: "Product ID cannot be null",
 		}
 		ctx.JSON(http.StatusBadRequest, response)
@@ -60,7 +60,7 @@ func (p *productController) GetProductsById(ctx *gin.Context) {
 
 	productId, err := strconv.Atoi(id)
 	if err != nil {
-		response := model.Reponse{
+		response := model.Response{
 			Message: "Product Id need to be number",
 		}
 		ctx.JSON(http.StatusBadRequest, response)
@@ -74,10 +74,27 @@ func (p *productController) GetProductsById(ctx *gin.Context) {
 	}
 
 	if product == nil {
-		response := model.Reponse{
+		response := model.Response{
 			Message: "Product not existing in database",
 		}
 		ctx.JSON(http.StatusNotFound, response)
+		return
+	}
+
+	ctx.JSON(http.StatusOK, product)
+}
+
+func (p *productController) UpdateProduct(ctx *gin.Context) {
+	var product model.Product
+	err := ctx.BindJSON(&product)
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest, err)
+		return
+	}
+
+	err = p.productUseCase.UpdateProduct(product)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, err)
 		return
 	}
 
