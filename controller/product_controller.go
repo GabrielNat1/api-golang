@@ -100,3 +100,34 @@ func (p *productController) UpdateProduct(ctx *gin.Context) {
 
 	ctx.JSON(http.StatusOK, product)
 }
+
+func (p *productController) DeleteProduct(ctx *gin.Context) {
+	id := ctx.Param("productId")
+	if id == "" {
+		response := model.Response{
+			Message: "Product ID cannot be null",
+		}
+		ctx.JSON(http.StatusBadRequest, response)
+		return
+	}
+
+	productId, err := strconv.Atoi(id)
+	if err != nil {
+		response := model.Response{
+			Message: "Product Id need to be number",
+		}
+		ctx.JSON(http.StatusBadRequest, response)
+		return
+	}
+
+	err = p.productUseCase.DeleteProduct(productId)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	response := model.Response{
+		Message: "Product deleted successfully",
+	}
+	ctx.JSON(http.StatusOK, response)
+}
