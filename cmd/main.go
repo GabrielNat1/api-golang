@@ -3,6 +3,7 @@ package main
 import (
 	"api-go/controller"
 	"api-go/db"
+	"api-go/middleware"
 	"api-go/repository"
 	"api-go/usecase"
 
@@ -30,11 +31,15 @@ func main() {
 		})
 	})
 
-	server.GET("/products", ProductController.GetProducts)
-	server.POST("/product", ProductController.CreateProduct)
-	server.GET("/product/:productId", ProductController.GetProductsById)
-	server.PUT("/product", ProductController.UpdateProduct)
-	server.DELETE("/product/:productId", ProductController.DeleteProduct)
+	protected := server.Group("/")
+	protected.Use(middleware.AuthMiddleware())
+	{
+		protected.GET("/products", ProductController.GetProducts)
+		protected.POST("/product", ProductController.CreateProduct)
+		protected.GET("/product/:productId", ProductController.GetProductsById)
+		protected.PUT("/product", ProductController.UpdateProduct)
+		protected.DELETE("/product/:productId", ProductController.DeleteProduct)
+	}
 
 	server.Run(":8000")
 
