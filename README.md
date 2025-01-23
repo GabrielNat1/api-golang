@@ -2,7 +2,7 @@
 
 This project is an API for product management developed in **Go** using the **Gin** framework. The architecture is modular, ensuring better organization and maintainability.
 
-<br><br><br>
+<br>
 
 ---
 
