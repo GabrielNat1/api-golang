@@ -6,17 +6,17 @@ import (
 	"api-go/middleware"
 	"api-go/repository"
 	"api-go/usecase"
-
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-
 	server := gin.Default()
 
 	dbConnection, err := db.ConnectDb()
+
 	if err != nil {
 		panic(err)
+		return err
 	}
 
 	ProductRepository := repository.NewProductRepository(dbConnection)
@@ -25,11 +25,16 @@ func main() {
 
 	ProductController := controller.NewProductController(*ProductUseCase)
 
-	server.GET("/ping", func(ctx *gin.Context) {
+	server.GET("/ping-dev", func(ctx *gin.Context) {
 		ctx.JSON(200, gin.H{
-			"message": "primeiros testes",
+			"message": "Servidor Está ativo!",
 		})
 	})
+
+	/*
+		routes server
+		  products
+	*/
 
 	protected := server.Group("/")
 	protected.Use(middleware.AuthMiddleware())

@@ -7,6 +7,21 @@ import (
 	_ "github.com/lib/pq"
 )
 
+/*
+	configuration 
+		 db
+*/
+
+/*
+var (
+	host = "go_db" string
+	port = 5432 int
+	user = "postgres" string
+	password = "1234" int
+	dbname = "postgres"
+
+)*/
+
 const (
 	host     = "go_db"
 	port     = 5432
@@ -29,7 +44,7 @@ func ConnectDb() (*sql.DB, error) {
 		panic(err)
 	}
 
-	fmt.Println("connected to" + dbname)
+	//fmt.Println("connected to" + dbname)
 
 	return db, nil
 }
