@@ -122,7 +122,8 @@ func (pr *ProductRepository) DeleteProduct(id int) error {
 
 	_, err = query.Exec(id)
 	if err != nil {
-		fmt.Println(err)
+		c.JSON(http.StatusUnauthorized, gin.H{"error": err})
+		//fmt.Println(err)
 		return err
 	}
 
