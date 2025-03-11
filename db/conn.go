@@ -7,6 +7,10 @@ import (
 	_ "github.com/lib/pq"
 )
 
+/*
+	configuration 
+		 db
+*/
 const (
 	host     = "go_db"
 	port     = 5432
