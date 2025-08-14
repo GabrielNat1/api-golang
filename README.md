@@ -11,19 +11,19 @@ API for product management, developed in **Go** with the **Gin** framework. Modu
 
 ## 📥 Installation & Setup
 
-Follow instructions in [INSTALLATION.md](INSTALLATION.md)
+Follow instructions in [INSTALLATION.md](./docs/INSTALLATION.md)
 
 ---
 
 ## 📂 Project Structure
 
-View full structure in [STRUCTURE.md](STRUCTURE.md)
+View full structure in [STRUCTURE.md](./docs/STRUCTURE.md)
 
 ---
 
 ## 📖 API Endpoints
 
-Full route documentation in [ENDPOINTS.md](ENDPOINTS.md)
+Full route documentation in [ENDPOINTS.md](./docs/ENDPOINTS.md)
 
 ---
 
