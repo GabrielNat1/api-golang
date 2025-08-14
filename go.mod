@@ -3,15 +3,12 @@ module api-go
 go 1.23.4
 
 require (
-	github.com/gin-gonic/gin v1.10.0
-	github.com/lib/pq v1.10.9
+	github.com/gin-gonic/gin v1.10.1
+	github.com/mattn/go-sqlite3 v1.14.32
+	go.uber.org/zap v1.27.0
 )
 
-require (
-	github.com/mattn/go-sqlite3 v1.14.32 // indirect
-	go.uber.org/multierr v1.11.0 // indirect
-	go.uber.org/zap v1.27.0 // indirect
-)
+require go.uber.org/multierr v1.11.0 // indirect
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
