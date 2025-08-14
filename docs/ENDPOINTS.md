@@ -6,11 +6,11 @@
 **GET `/ping`**  
 Returns a test message.
 
--------------------------
+```json
 {
   "message": "initial tests"
 }
--------------------------
+```
 
 ---
 
@@ -20,7 +20,7 @@ Returns a test message.
 **GET `/products`**  
 Returns all registered products.
 
--------------------------
+```json
 [
   {
     "id": 1,
@@ -33,7 +33,7 @@ Returns all registered products.
     "price": 150.00
   }
 ]
--------------------------
+```
 
 ---
 
@@ -41,21 +41,21 @@ Returns all registered products.
 **POST `/product`**  
 
 **Body**
--------------------------
+```json
 {
   "name": "Sample Product",
   "price": 100.00
 }
--------------------------
+```
 
 **Response**
--------------------------
+```json
 {
   "id": 1,
   "name": "Sample Product",
   "price": 100.00
 }
--------------------------
+```
 
 ---
 
@@ -63,13 +63,13 @@ Returns all registered products.
 **GET `/product/:productId`**  
 Returns a specific product by its ID.
 
--------------------------
+```json
 {
   "id": 1,
   "name": "Sample Product",
   "price": 100.00
 }
--------------------------
+```
 
 ---
 
@@ -77,22 +77,22 @@ Returns a specific product by its ID.
 **PUT `/product`**  
 
 **Body**
--------------------------
+```json
 {
   "id": 1,
   "name": "Updated Product",
   "price": 150.00
 }
--------------------------
+```
 
 **Response**
--------------------------
+```json
 {
   "id": 1,
   "name": "Updated Product",
   "price": 150.00
 }
--------------------------
+```
 
 ---
 
@@ -100,8 +100,8 @@ Returns a specific product by its ID.
 **DELETE `/product/:productId`**  
 Removes a product by its ID.
 
--------------------------
+```json
 {
   "message": "Product successfully removed"
 }
--------------------------
+```

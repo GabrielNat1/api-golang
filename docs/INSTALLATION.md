@@ -9,18 +9,18 @@
 ## 🏃 How to Run
 
 1. **Clone the repository**
--------------------------
+```shell
 git clone https://github.com/usuario/api-go.git
 cd api-go
--------------------------
+```
 
 2. **Configure the database**  
 Edit `db/conn.go` with your credentials.
 
 3. **Start services with Docker**
--------------------------
+```shell
 docker-compose up
--------------------------
+```
 
 4. **Access the API**
 - URL: `http://localhost:8000`

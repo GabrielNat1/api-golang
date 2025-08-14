@@ -1,6 +1,6 @@
 # 📚 Project Structure
 
--------------------------
+```plaintext
 API-GO/
 ├── cmd/
 │   └── main.go               # Entry point of the application
@@ -21,4 +21,4 @@ API-GO/
 ├── go.mod                    # Go modules dependencies
 ├── go.sum                    # Dependency hashes
 └── README.md                 # Project documentation
--------------------------
+```
