@@ -1,171 +1,37 @@
-# API-GO: Product Management with JWT Verification
+# 🚀 API-GO: Product Management with JWT Verification
 
-This project is an API for product management developed in **Go** using the **Gin** framework. The architecture is modular, ensuring better organization and maintainability.
+[![Go](https://img.shields.io/badge/Go-1.21-blue?logo=go)](https://golang.org/) 
+[![Gin](https://img.shields.io/badge/Gin-Framework-brightgreen?logo=gin)](https://gin-gonic.com/) 
+[![Docker](https://img.shields.io/badge/Docker-Container-blue?logo=docker)](https://www.docker.com/) 
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue?logo=postgresql)](https://www.postgresql.org/)
 
-<br>
-
----
-
-## 🚀 Project Initialization
-
-
-### Pre-requisites
-
-Make sure you have installed:
-- **Golang**: [Install Golang](https://go.dev/doc/install)
-- **Docker**: [Install Docker](https://www.docker.com/products/docker-desktop)
+API for product management, developed in **Go** with the **Gin** framework. Modular architecture ensures clean organization and maintainability.
 
 ---
 
-### How to Run
+## 📥 Installation & Setup
 
-1. Clone the project and navigate to the folder:
-   ```bash
-   git clone https://github.com/usuario/api-go.git
-   cd api-go
-   ```
-
-2. Configure the database connection:
-   Edit the settings in the `db/conn.go` file to reflect your credentials.
-
-3. Start the services with Docker:
-   ```bash
-   docker-compose up
-   ```
-
-4. Access the API at the address:
-   - `http://localhost:8000`
+Follow instructions in [INSTALLATION.md](INSTALLATION.md)
 
 ---
 
-## 📚 Project Structure
+## 📂 Project Structure
 
-The structure is organized as follows:
-
-```plaintext
-API-GO/
-├── cmd/
-│   └── main.go               # Main file to start the application
-├── controller/
-│   └── product_controller.go # Controllers responsible for the routes
-├── db/
-│   └── conn.go               # Database configuration and connection
-├── model/
-│   ├── product.go            # Product model
-│   └── response.go           # Response structures for the API
-├── repository/
-│   └── product_repository.go # Layer for interacting with the database
-├── usecase/
-│   └── product_usecase.go    # Business logic and application logic
-├── .gitignore                # Files ignored in version control
-├── docker-compose.yml        # Docker Compose configuration
-├── Dockerfile                # Docker container configuration
-├── go.mod                    # Project dependencies
-├── go.sum                    # Dependency hashes
-└── README.md                 # Project documentation
-```
+View full structure in [STRUCTURE.md](STRUCTURE.md)
 
 ---
 
-## 📖 Endpoints
+## 📖 API Endpoints
 
-### **Ping**
-- **GET `/ping`**
-  - Returns a test message.
-  - **Response**:
-    ```json
-    {
-      "message": "initial tests"
-    }
-    ```
+Full route documentation in [ENDPOINTS.md](ENDPOINTS.md)
 
 ---
 
-### **Products**
-- **GET `/products`**
-  - Lists all registered products.
-  - **Example Response**:
-    ```json
-    [
-      {
-        "id": 1,
-        "name": "Product 1",
-        "price": 100.00
-      },
-      {
-        "id": 2,
-        "name": "Product 2",
-        "price": 150.00
-      }
-    ]
-    ```
+## 🛠️ Technologies
 
-- **POST `/product`**
-  - Creates a new product.
-  - **Body**:
-    ```json
-    {
-      "name": "Sample Product",
-      "price": 100.00
-    }
-    ```
-  - **Example Response**:
-    ```json
-    {
-      "id": 1,
-      "name": "Sample Product",
-      "price": 100.00
-    }
-    ```
-
-- **GET `/product/:productId`**
-  - Returns a specific product based on the ID.
-  - **Example Response**:
-    ```json
-    {
-      "id": 1,
-      "name": "Sample Product",
-      "price": 100.00
-    }
-    ```
-
-- **PUT `/product`**
-  - Updates an existing product.
-  - **Body**:
-    ```json
-    {
-      "id": 1,
-      "name": "Updated Product",
-      "price": 150.00
-    }
-    ```
-  - **Example Response**:
-    ``` json
-    {
-      "id": 1,
-      "name": "Updated Product",
-      "price": 150.00
-    }
-    ```
-
-- **DELETE `/product/:productId`**
-  - Removes a product based on the ID.
-  - **Example Response**:
-    ``` json
-    {
-      "message": "Product successfully removed"
-    }
-    ```
-
----
-
-## 🛠️ Technologies Used
-
-- **Golang**: Main programming language.
-- **Gin**: Lightweight and fast framework for API development.
-- **Docker**: For container creation and management.
-- **PostgreSQL** (or another relational database): Configured in the `db` module.
-
-<br>
-
----
+| Technology | Description |
+|------------|-------------|
+| 🟦 Golang | Main programming language |
+| 🟩 Gin | Fast and lightweight API framework |
+| 🐳 Docker | Containerization and orchestration |
+| 🐘 PostgreSQL | Relational database system |

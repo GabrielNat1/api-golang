@@ -6,6 +6,7 @@ import (
 	"api-go/middleware"
 	"api-go/repository"
 	"api-go/usecase"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,7 +17,6 @@ func main() {
 
 	if err != nil {
 		panic(err)
-		return err
 	}
 
 	ProductRepository := repository.NewProductRepository(dbConnection)
