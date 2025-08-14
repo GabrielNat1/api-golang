@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"api-go/model"
-	"api-go/usecase"
+	"api-go/src/model"
+	"api-go/src/usecase"
 	"net/http"
 	"strconv"
 

@@ -1,8 +1,8 @@
 package usecase
 
 import (
-	"api-go/model"
-	"api-go/repository"
+	"api-go/src/model"
+	"api-go/src/repository"
 )
 
 type ProductUseCase struct {

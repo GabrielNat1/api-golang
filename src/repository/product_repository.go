@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"api-go/model"
+	"api-go/src/model"
 	"database/sql"
 	"fmt"
 )
